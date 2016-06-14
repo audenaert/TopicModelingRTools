@@ -28,4 +28,4 @@ model <- trainSimpleLDAModel(docs, 50, stoplist=stoplist)
 print("printing topic word clouds")
 
 # Print the resulting topics as wordclouds for easy visualization.
-plotTopicWordcloud(model)
+plotTopicWordcloud(model, verbose=T)

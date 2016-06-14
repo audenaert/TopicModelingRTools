@@ -1,4 +1,4 @@
-## This file contains functions related to running LDA using mallet and working with the 
+## This file contains functions related to running LDA using Mallet and working with the 
 ## output.
 
 
@@ -55,10 +55,16 @@ trainSimpleLDAModel <- function(documents,
   topic.model$loadDocuments(mallet.instances)
   vocabulary <- topic.model$getVocabulary()
   word.freqs <- mallet.word.freqs(topic.model)
-  #topic.model$setAlphaOptimization(40, 80)
   topic.model$train(1000)
 
-  # construct result
+  # construct result 
+  # Note that all of this information can be easily retrieved via the trained 
+  # topic model (as we do here). The motivation for loading this information 
+  # in an R list rather than simply referencing the data structure provided by
+  # Mallet is that this will allow us to write the data in a file format of 
+  # our choice. This will allow us to work with data produced by different 
+  # systems and to share it with others (as opposed to the Java-specific 
+  # serialization forms used by Mallet)
   result <- list()
   result$model <- topic.model
   result$documents <- documents
@@ -66,8 +72,8 @@ trainSimpleLDAModel <- function(documents,
   result$wordFreq <- word.freqs
 
   result$topics <- mallet.topic.words(topic.model, smoothed=TRUE, normalized=TRUE)
-  colnames(result$topics) <- vocabulary
   result$docAssignments <- mallet.doc.topics(topic.model, normalized=T, smoothed=F)
+  colnames(result$topics) <- vocabulary
 
   result$K <- nrow(result$topics)
   result$N <- ncol(result$topics)
@@ -76,63 +82,84 @@ trainSimpleLDAModel <- function(documents,
   return(result)
 }
 
+#' Creates
+#' 
+#' @param lda.model The topic model, constructed with trainSimpleLDAModel
+#' @param k The index of the topic to be returned, in the range [1, lda.model$K]
+#' 
+#' @return The requrested topic as a list. Contains the following members
+#'   label:    A label for this topic, initially generic 'Topic k'.
+#'   model:    The supplied model, for reference
+#'   k:        The index of the returned topic
+#'   getWords: A function to retrieve the top words of the document
+#'   getDocs:  A function to retrieve the top documents associated with this topic
 getTopic <- function(lda.model, k)
 {
-  getWords <- function()
+  
+  getModel <- function() 
+  {
+    return (lda.model)
+  }
+  
+  getWords <- function(ct = lda.model$V)
   {
     terms <- model$topic[2, ]
-    terms <- terms[order(terms, decreasing=T)]
+    terms <- terms[order(terms, decreasing=T)][1:ct]
+    
+    return (terms)
   }
   
   topic <- list()
-  topic$model <- lda.model
+  topic$label <- paste("Topic", k)
   topic$k <- k
+  topic$getModel <- getModel
   topic$getWords <- getWords
   return (topic)
 }
 
-plotTopicWc <- function(lda.model, k, K, output="plots", prefix="Topic-", num.words=100, verbose=T)
+#' Plot all topics within a topic model as wordclouds and print to a file. 
+#' 
+#' @param lda.model The LDA model whose topics should be plotted.
+#' @param output    The directory to write the wordcloud image files to. Defaults to "plots".
+#' @param prefix    A string to prefix on the generated plots
+#' @param num.words The number of words to display in the wordcloud. Defaults to 100.
+#' @param verbose   Print status updates as the wordclouds are being generated.
+plotTopicWc <- function(topic, output="plots", prefix="Topic-", num.words=100, verbose=F)
 {
-    K <- lda.model$K
-    topic.top.words <- mallet.top.words(lda.model$model, lda.model$topics[k, ], num.words)
-    plot.fname <- paste(output, "/", prefix, k, ".png", sep="")
-    if (verbose)
-      print(paste("Generating wordcloud for topic ", k, "of", K, ":", plot.fname))
-
-    png(plot.fname, width=12, height=8, units="in", res=300)
-    wordcloud(topic.top.words$words,
-              topic.top.words$weights,
-              scale=c(4, .2),
-              rot.per=0.1,
-              random.order=FALSE,
-              colors=brewer.pal(8, "Dark2"))
-    dev.off()
+  K <- topic$getModel()$K
+  k <- topic$k
+  top.words <- topic$getWords(num.words);
+  plot.fname <- paste(output, "/", prefix, k, ".png", sep="")
+  
+  if (verbose)
+    print(paste("Generating wordcloud for topic ", k, "of", K, ":", plot.fname))
+    
+  png(plot.fname, width=12, height=8, units="in", res=300)
+  wordcloud(names(top.words),
+            top.words,
+            scale=c(4, .2),
+            rot.per=0.1,
+            random.order=FALSE,
+            colors=brewer.pal(8, "Dark2"))
+  dev.off()
 }
 
-plotTopicWordcloud <- function(lda.model, output="plots", prefix="Topic-", num.words=100, verbose=T)
+#' Plot all topics within a topic model as wordclouds and print to a file. 
+#' 
+#' @param lda.model The LDA model whose topics should be plotted.
+#' @param output    The directory to write the wordcloud image files to. Defaults to "plots".
+#' @param prefix    A string to prefix on the generated plots
+#' @param num.words The number of words to display in the wordcloud. Defaults to 100.
+#' @param verbose   Print status updates as the wordclouds are being generated.
+#'
+plotTopicWordcloud <- function(lda.model, output="plots", prefix="Topic-", num.words=100, verbose=F)
 {
-#   pal <- brewer.pal(9,"BuGn")
-#   pal <- pal[-(1:4)]
-#   topic.words.m <- mallet.topic.words(lda.model$model, smoothed=TRUE, normalized=TRUE)
-#   colnames(topic.words.m) <- lda.model$vocabulary
   if (verbose)
     print(paste("Generating wordclouds for", lda.model$K, "topics."))
 
   for (topic.ix in 1:lda.model$K)
   {
-    plot.fname <- paste(output, "/", prefix, topic.ix, ".png", sep="")
-    if (verbose)
-      print(paste("Generating wordcloud for topic ", topic.ix, "of", lda.model$K, ":", plot.fname))
-
-    png(plot.fname, width=12, height=8, units="in", res=300)
-    topic.top.words <- mallet.top.words(lda.model$model, lda.model$topics[topic.ix, ], num.words)
-    wordcloud(topic.top.words$words,
-              topic.top.words$weights,
-              scale=c(4, .2),
-              rot.per=0.1,
-              random.order=FALSE,
-              colors=brewer.pal(8, "Dark2"))
-    dev.off()
+    plotTopicWc(getTopic(lda.model, topic.ix), output, prefix, num.words, verbose)
   }
 
   if (verbose)
