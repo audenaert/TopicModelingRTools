@@ -1,7 +1,3 @@
-library(XML)
-library(mallet)
-library(wordcloud)
-
 source("functions/lda.R")
 source("functions/import.R")
 #source("functions/export.R")
