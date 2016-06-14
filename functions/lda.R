@@ -78,6 +78,15 @@ trainSimpleLDAModel <- function(documents,
   result$K <- nrow(result$topics)
   result$N <- ncol(result$topics)
   result$D <- nrow(result$documents)
+  
+  result$getTopic <- function(k) {
+    return (getTopic(result, k))
+  }
+  
+  result$getDocument <- function(id) {
+    ix <- which(documents$id == id)
+    return (documents[ix]$text)
+  }
 
   return(result)
 }
@@ -103,10 +112,20 @@ getTopic <- function(lda.model, k)
   
   getWords <- function(ct = lda.model$V)
   {
-    terms <- model$topic[2, ]
+    terms <- lda.model$topic[k, ]
     terms <- terms[order(terms, decreasing=T)][1:ct]
     
     return (terms)
+  }
+  
+  getDocs <- function(ct = lda.model$D) 
+  {
+    docs <- lda.model$docAssignments[,k]
+    names(docs) <- lda.model$documents$id
+    
+    docs <- docs[order(docs, decreasing=T)][1:ct]
+    
+    return (docs)
   }
   
   topic <- list()
@@ -114,6 +133,8 @@ getTopic <- function(lda.model, k)
   topic$k <- k
   topic$getModel <- getModel
   topic$getWords <- getWords
+  topic$getDocs <- getDocs
+  
   return (topic)
 }
 
