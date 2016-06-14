@@ -91,7 +91,7 @@ loadDocuments <- function(data.dir, recursive=T)
     
     return (rawtext.lower)
   }
-  file
+  
   paths.v <- file.path(data.dir, m[,1])
   docs <- sapply(paths.v, readFile)
   docs <- cbind(m[, 1], docs)
