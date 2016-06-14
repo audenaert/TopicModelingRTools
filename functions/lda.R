@@ -85,7 +85,7 @@ trainSimpleLDAModel <- function(documents,
   
   result$getDocument <- function(id) {
     ix <- which(documents$id == id)
-    return (documents[ix]$text)
+    return (documents$text[ix])
   }
 
   return(result)

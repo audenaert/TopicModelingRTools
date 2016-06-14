@@ -25,7 +25,7 @@ stoplist <- "stop-words/stop-words_english_3_en.txt"
 # from data.dir and store the results along with some supporting information 
 # in a convenient data structure
 model <- trainSimpleLDAModel(docs, 50, stoplist=stoplist)
-print("printing topic word clouds")
 
 # Print the resulting topics as wordclouds for easy visualization.
+print("printing topic word clouds")
 plotTopicWordcloud(model, verbose=T)
