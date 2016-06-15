@@ -26,10 +26,24 @@ print(similarity[1:5,1:5])
 
 # Rank topics based on their similarity to topic one
 topic.ix = 1
+colnames(similarity) <- 1:50
+rownames(similarity) <- 1:50
 topic.k.similarity <- similarity[order(similarity[,topic.ix]),topic.ix]
 topic.k.mostsimilar.ix <- as.numeric(names(topic.k.similarity[1]))
 model.run.1$getTopic(topic.ix)$getWords(10)
 model.run.1$getTopic(topic.k.mostsimilar.ix)$getWords(10)
+
+# Find most similar topic in model 2
+# HACK: need to combine these into a vector and create a function 
+#       to support this usecase.
+for (ix in 1:50)
+{
+  score <- topic.diff.kl(m1.k1, model.run.2$getTopic(ix))
+  print(paste(ix, score))
+}
+
+model.run.2$getTopic(34)$getWords(10)
+model.run.1$getTopic(1)$getWords(10)
 
 # print the topics that are most similar to topic 2 in descending order
 #order(similarity[2,])
