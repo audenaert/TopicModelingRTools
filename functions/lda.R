@@ -110,10 +110,11 @@ getTopic <- function(lda.model, k)
     return (lda.model)
   }
   
-  getWords <- function(ct = lda.model$V)
+  getWords <- function(ct = lda.model$D, sorted=T)
   {
     terms <- lda.model$topic[k, ]
-    terms <- terms[order(terms, decreasing=T)][1:ct]
+    if (sorted)
+      terms <- terms[order(terms, decreasing=T)][1:ct]
     
     return (terms)
   }
@@ -136,6 +137,80 @@ getTopic <- function(lda.model, k)
   topic$getDocs <- getDocs
   
   return (topic)
+}
+
+#' Compute the difference between two topics from the same model using 
+#' the Kullback-Leibler distance. 
+#' 
+#' The standard KL divergence is not a valid metric since it depends on 
+#' the order of the vectors being compared (that is KL(a, b) != KL(b, a)).
+#' It can be though of as the relative information gain of using a instead
+#' of b. As a distance metric, however, it is necessary for the order of 
+#' the operands to be independent. To acheive this, this function simply
+#' computes KL(a, b) + KL(b, a). 
+topic.diff.kl <- function(topic.a, topic.b, same.model=F) 
+{
+  terms.a <- topic.a$getWords(sorted=F)
+  terms.b <- topic.b$getWords(sorted=F)
+  
+  if (!same.model)
+  {
+    min.val <- min(union(topic.a$getWords(), topic.b$getWords()))
+    if (min.val <= 0)
+      min.val <- 10e-7  # make sure this isn't zero
+                   
+    vocab <- union(names(terms.a), names(terms.b))
+    
+    # set missing values to zero, note that we could also handle missing
+    # values by ignoring the impact of those terms, using only the shared vocab
+    terms.a <- terms.a[vocab]
+    terms.a[which(is.na(terms.a))] <- min.val;
+    
+    terms.b <- terms.b[vocab]
+    terms.b[which(is.na(terms.b))] <- min.val;
+  }
+  
+
+  kl.div.a = sum(terms.a * log(terms.a / terms.b))
+  kl.div.b = sum(terms.b * log(terms.b / terms.a))
+  
+  return (kl.div.a + kl.div.b)
+}
+
+topic.similarity.kl <- function(lda.model)
+{
+  # HACK: need to use function application instead of loops
+  K <- lda.model$K
+  similarity <- matrix(nrow = K, ncol = K)
+  for (ix.a in 1:(K - 2))
+  { 
+    
+    topic.a <- lda.model$getTopic(ix.a)
+    for (ix.b in (ix.a+1):K)
+    {
+      topic.b <- lda.model$getTopic(ix.b)
+      
+      kl.diff <- topic.diff.kl(topic.a, topic.b)
+      similarity[ix.a, ix.b] <- kl.diff[1]
+      similarity[ix.b, ix.a] <- kl.diff[1]
+    }
+  }
+  
+  return (similarity)
+}
+
+#' Returns a list of the topics, ranked by thier similarity to a given topic.
+#' 
+#' @param similarity.m The similarity matrix
+#' @param k The topic to rank the results in comparison to 
+topic.similarity.findsimilar <- function(similarity.m, k) 
+{
+  # the similarity metric for topics relative to K in increasing order 
+  similar.k <- similarity.m[k, order(similarity.m[k,])]
+  # Use topic indices as names for vector elements
+  names(similar.k) <- order(similarity.m[k,])
+  
+  return (similar.k)
 }
 
 #' Plot all topics within a topic model as wordclouds and print to a file. 
