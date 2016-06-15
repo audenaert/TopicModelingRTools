@@ -1,0 +1,7 @@
+A quick scrape of eBay for Roman Antiquities
+
+I scraped 400 items tagged as Roman antiquities from eBay.ca today. One was going for 1.9$ million; consensus on twitter was that it was a fake. Of the rest, the combined valued was ~ $50 000. Only 188 items had more than one bid on them. That subset had a combined value of $4000, so an interesting discrepancy there. The location of the sellers was as you’d expect – USA, UK were the top two. Next up: Germany and Slovenia. So I’d keep an eye peeled on Slovenia as a conduit for illicit materials from the Balkans.
+
+400 Roman Items on eBay
+
+Graham scraped 400 items tagged as Roman antiquities from eBay.ca today. One was going for 1.9$ million; consensus on twitter was that it was a fake. Of the rest, the combined valued was ~ $50 000. Only 188 items had more than one bid on them. That subset had a combined value of $4000, so an interesting discrepancy there. The location of the sellers was as you’d expect – USA, UK were the top two. Next up: Germany and Slovenia. So Graham suggests keeping an eye peeled on Slovenia as a conduit for illicit materials from the Balkans 

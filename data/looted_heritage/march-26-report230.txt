@@ -1,0 +1,88 @@
+Why are many countries in Africa vulnerable to looting, and how can they defend themselves?
+
+In Mali, antiquities dealers employ ‘[w]hole villages and encampments of immigrant workers’ to strip-mine archaeological sites (Shyllon, 2011: 139). In 2002, 56,000 looted Egyptian antiquities were seized in a single operation – unsurprisingly, in London (Shyllon, 2011: 136). Of the 35 places on the List of World Heritage in Danger, 15 are in Africa (though only 3 of those are cultural heritage sites).
+
+African nations are some of the richest in archaeological resources, some of the most vulnerable to looting from archaeological sites and theft from museums, and some of the least able to prevent smuggling and illicit export. Here, I want to review why.
+
+My most important sources were three Africanist experts – conservator Patrick Darling (PD), lawyer Folarin Shyllon (FS) and archaeologist Téréba Togola (TT). I’ve combined their ideas with some of the conclusions from my own (as-yet-unpublished) work on the politics and ethics of archaeologists’ responses to subsistence digging (SH).
+
+Problems
+
+(Then) Mali’s National Director of Arts and Culture, Téréba Togola, listed some of the key social and economic problems that drive the looting, or support the illicit trading, in Africa.
+
+    Economic insecurity:
+        lack of alternative resources, where it leads to exploitation of archaeological resources, e.g. Mali (SH, here);
+        existence of alternative resources, where it leads to conflict over those resources, e.g. Nigeria (SH, here);
+        widespread, chronic, deep poverty (ALL); and
+        general precarity of existence (SH, here).
+    Health insecurity:
+        exposure to disease (TT); and
+        lack of access to healthcare (SH).
+    Climate change and desertification (SH, here).
+    Natural disasters and other humanitarian crises:
+        droughts (TT);
+        famines (TT); and
+        conflicts (SH), all of which create acute needs in local communities and displaced populations, then push those groups into chronic debt.
+    Lack of education (FS/SH/TT).
+    Corruption, and lack of political will or law enforcement, which allow the illicit business to flourish (RA/FS).
+
+Threats to cultural heritage
+
+Some activities can expose sites to looting:
+
+    Development,
+        which reveals sites, and thus exposes them to looting (SH, here);
+        for which sites may be looted, to prevent their excavation/preservation delaying/blocking development (SH, here); and, particularly,
+        Mining and mineral extraction, the licenses for which are used as covers for illicit excavation of antiquities (PD).
+    Tourism, which provides a mass market for looted antiquities (ALL).
+
+Consequences
+
+The most immediate consequence of looting is probably subsistence – most looters are very poor and, for them, looting ‘makes a vital contribution to the family budget‘. That could be a powerful argument against archaeological protectionism. However, subsistence is not the only consequence. If nothing else, looting destroys cultural resources and, thus, ultimately, destroys the potential for a sustainable cultural economy.
+
+Long-term, negative consequences include:
+
+    Social division and community conflict over archaeological resources;
+    Destruction of sources of self-understanding and community pride;
+    Destruction of sources of sustainable family income and community economy;
+    Increased inequality – because looters normally get ‘less than 1% of the final sale price‘ of an artefact, while smugglers, handlers and dealers get more than 99% – ultimately resulting in
+        increased inequalities in physical and mental health,
+        decreased social mobility,
+        decreased trust and community cohesion, and
+        increased violence,
+        so, if collectors or dealers claim that their business supports local economies, they are stating the opposite of the truth;
+    Increased corruption;
+    Funding of organised crime networks (and, thus, violent crime); and
+    Funding of terrorist networks (and, thus, political violence).
+
+Legal failures of the profession and the state
+
+Nigeria’s Olabisi Onabanjo University law professor, Folarin Shyllon, considered ways for African states to regain previous losses of cultural property:
+
+    Litigation in foreign courts is impractical, because it is difficult to prove the national origins and illicit excavation of archaeological material; and it can also be difficult to prove the institutional origins and illicit acquisition of poorly-documented archaeological collections.
+    The 1970 UNESCO Convention on the Means of Prohibiting and Preventing the Illicit Import, Export and Transfer of Ownership of Cultural Property is useful; but it requires ratification, and there can be technical difficulties.(1)
+    The 1978 UNESCO Intergovernmental Committee for Promoting the Return of Cultural Property to its Countries of Origin or its Restitution in Case of Illicit Appropriation would be useful, but African states are pessimistic and exhausted.
+    Bilateral agreements(and multilateral agreements) are useful, if African institutions and states make the effort to initiate them.
+        For instance, African museum professionals approached European and American colleagues within the International Council of Museums (ICOM): they agreed a Red List Africa database of endangered cultural property, which ‘[is] protected by national legislation, banned from export, and may under no circumstances be put on sale’.
+    Alternative dispute resolution (ADR) via mediation/negotiation (agreement through a non-commenting third party) and conciliation (agreement through an advisory third party) can be useful; but they are voluntary, private and confidential.
+    And (ADR) arbitration (decision by an expert third party) is effective, but it can be prohibitively expensive, and antiquities market countries may be unwilling to fund antiquities source countries’ emptying of the market countries’ museums.
+
+Parts of the solution: the duties of the profession, the state and/or the international community
+
+Prof. Shyllon, Dr. Togola and I proposed ways for countries to prevent or minimise any future loss of cultural property.
+
+    aid, to remove the immediate need to loot, which could be provided at cultural heritage sites as well as institutional centres (SH);
+    development, to remove the long-term causes of looting (SH);
+        sustainable heritage initiatives (e.g. cultural tourism and heritage arts and crafts), if they pay a living wage and provide good working conditions (SH);
+            license trade in insignificant cultural property, if it generates a significant income for the licensing state (SH/FS);
+            ban unlicensed export of cultural property (FS);
+    state ownership of archaeological resources (SH/FS);
+    implementation and standardisation/harmonisation of laws (FS/TT);
+    creation of sites and monuments records (SMRs) (TT);
+    registration and digitisation of collections (FS);
+    education: cultural awareness programmes in local communities (SH/TT); and
+    internationally-coordinated law enforcement (through police, customs and immigration) (SH/FS/TT).
+
+Notes
+
+1: currently, there are 54 internationally-recognised African states; but there are only 28 African parties to the 1970 UNESCO Convention. The states parties are: Algeria; Angola; Burkina Faso; Cameroon; Central African Republic; Chad; Côte d’Ivoire; Democratic Republic of Congo; Egypt; Equatorial Guinea; Gabon; Guinea; Libya; Madagascar; Mali; Mauritania; Mauritius; Morocco; Niger; Nigeria; Rwanda; Senegal; South Africa; Syrian Arab Republic; Tunisia; United Republic of Tanzania; Zambia; Zimbabwe; if the state has ratified the convention, its name is italicised. The Republic of Somaliland and the Sahrawi Arab Democratic Republic are only partially-recognised, so they are unable to sign or ratify the 1970 Convention.

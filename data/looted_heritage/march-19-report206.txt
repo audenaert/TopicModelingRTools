@@ -1,0 +1,25 @@
+WikiLoot: crowd-sourcing an analysis of the black market in looted antiquities
+reblog 23 26 reblog
+1. What do you propose to do? [20 words]
+WikiLoot will identify looted antiquities in American museums by crowd-sourcing the analysis of a unique archive seized from black market dealers.
+
+2. Is anyone doing something like this now and how is your project different? [30 words]
+A handful of researchers around the world have access to parts of the archive. None have tried a crowd-sourcing approach to locating the thousands of looted objects shown in it.
+
+3. Describe the network with which you intend to build or work. [50 words]
+WikiLoot will be built upon an open-source platform (e.g. MediaWiki or Drupal), using semantic web and linked data technology. Tagging and analysis of the unstructured data in the archive will be crowd-sourced via an established and growing social media network of investigative reporters, academics, researchers and citizens combating the illicit antiquities trade.
+
+4. Why will it work? [100 words]
+It took European investigators nearly a decade to trace one hundred objects shown in records seized from black market dealers to the shelves of American museums. The result was an international controversy that exposed the connection between museums and the illicit antiquities trade. During six years of reporting on the topic, I obtained much of this archive, including images of thousands of looted antiquities that have yet to be located. WikiLoot will enlist the public to track down those objects, building a digital map of the illicit trade while raising awareness about the crisis of looting.
+
+5. Who is working on it? [100 words]
+Jason Felch, the project lead, is an investigative reporter at the Los Angeles Times and co-author of Chasing Aphrodite: The Hunt for Looted Antiquities at the World’s Richest Museum.
+
+The project is guided by an advisory board of investigative reporters, academics, investigators and open-source hackers as well as a fundraiser, a marketing expert, an attorney and a graphic designer. The Los Angeles Times Data Desk and several universities and nonprofits have indicated support for the effort and an eagerness to contribute.
+6. What part of the project have you already built? [100 words]
+We possess the black market archive and are connected to an existing network of experts, journalists and citizens who promote awareness of the illicit antiquities trade via social media and various websites, including ChasingAphrodite.com. With funding from Knight, we will build a beta version of WikiLoot, test its usability with the existing network and launch a public alpha version. As looted antiquities are located, we will leverage media coverage and social networks to expand the reach of the network.
+7. How would you sustain the project after the funding expires? [50 words]
+The Los Angeles Times and several universities and non-profits have expressed interest in hosting WikiLoot or sustaining it with institutional and technical support. Additional financial support will be sought from sources such as Google Grants, the National Endowment for Humanities, the Wikimedia Foundation, and the National Geographic Society.
+Requested amount from Knight News Challenge: $250,000
+Expected amount of time required to complete project: 1 year
+Total Project Cost: $350,000

@@ -1,0 +1,30 @@
+﻿Hidden in the landscape of the fertile crescent of the Middle East, scientists say, lurk overlooked networks of small settlements that hold vital clues to ancient civilizations.
+
+Beyond the impressive mounds of earth, known as tells in Arabic, that mark lost cities, researchers have found a way to give archaeologists a broader perspective of the ancient landscape. By combining spy-satellite photos obtained in the 1960s with modern multispectral images and digital maps of Earth's surface, the researchers have created a new method for mapping large-scale patterns of human settlement. The approach, used to map some 14,000 settlement sites spanning eight millennia in 23,000 square kilometres of northeastern Syria, is published today in the Proceedings of the National Academy of Sciences1.
+
+“Traditional archaeology goes straight to the biggest features — the palaces or cities — but we tend to ignore the settlements at the other end of the social spectrum,” says Jason Ur, an archaeologist at Harvard University in Cambridge, Massachusetts, who is co-author of the study. “The people who migrated to cities came from somewhere; we have to put these people back on the map.”
+
+Such comprehensive maps promise to uncover long-term trends in urban activity. “This kind of innovative large-scale application is what remote sensing has been promising archaeology for some years now; it will certainly help us to focus our attention on the big picture,” says Graham Philip, an archaeologist at Durham University, UK.
+Soil signatures
+
+The satellite-based method relies on the fact that human activity leaves a distinctive signature on the soil, called anthrosols. Formed from organic waste and decayed mud-brick architecture, anthrosols are imbued with higher levels of organic matter and have a finer texture and lighter appearance than undisturbed soil — resulting in reflective properties that can be seen by satellites.
+Expand
+
+Analysis of the locations of ancient settlements can reveal the many connections between them.
+
+From Ref 1
+
+To sift through satellite images for those signatures, co-author Bjoern Menze, a research affiliate in computer science at the Massachusetts Institute of Technology in Cambridge, built on his skills from his day job identifying tumours in clinical images.
+
+Menze trained software to detect the characteristic wavelengths of known anthrosols in images spanning 50 years of seasonal differences. This automation was key. “You could do this with the naked eye using Google Earth to look for sites, but this method takes the subjectivity out of it by defining spectral characteristics that bounce off of archaeological sites,” says Ur.  
+
+Menze and Ur also used digital elevation data collected in 2000 by the space shuttle as part of NASA's Shuttle Radar Topography Mission (SRTM). This information enabled the authors to estimate the volume of the larger sites for the first time — and to use this volume as a proxy for a site’s longevity. The bigger the mound, the longer the settlement survived.
+
+Tony Wilkinson, an archaeologist at Durham University and Ur’s former mentor, says that being able to measure the volume of many sites over large areas remotely is a breakthrough. However, Philip cautions that the resolution of the SRTM data may be too coarse to provide an accurate measurement for the volume of the smaller settlements. Nonetheless, he expects that the method will spark new archaeological insights for several different regions.
+New life for old hypotheses
+
+The method has already renewed speculation about the importance of water to city development. Surprisingly, this study found that a handful of sites are unexpectedly large given that they are not located near rivers or in areas of high precipitation. “The settlement known as Tell Brak, for example, is far too large for what one would expect at such a marginal position,” says Ur. “This is where things get interesting.”
+
+Jennifer Pournelle, a landscape archaeologist at the University of South Carolina in Columbia, agrees. “These findings validate hypotheses I’ve introduced in southern Iraq — namely that irrigation is an after-effect of urbanization,” she says. “It’s not what enables a city to develop; it’s what keeps them going after soil moisture dries up.”
+
+Pournelle says that she plans to adopt this method as soon as possible, and notes that it offers a valuable way to learn more about large regions, particularly when they are remote and difficult to access because of local conflicts.

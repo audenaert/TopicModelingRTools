@@ -1,0 +1,31 @@
+Tool Could be used with eBay Photos of Artefacts to find Interesting Patterns
+
+QTIP software: analyze image collections with the speed of the light
+QTIP is a free digital image processing application. It was developed by Multimodal Analysis Lab and National University of Singapore) and Software Studies Initiative at University of California, San Diego. Example: using QTIP with ImagePlot to compare 580 van Gogh paintings (left) and 580 Gauguin paintings (right). In each plot, X-axis = median brightness, Y-axis = median saturationSince 2008, Software Studies Initiative (softwarestudies.com) has been developing a computational approach to working with big visual data sets which we call cultural analytics. We automatically analyze image or video collections using digital image processing, and then use the results to render high resolution visualizations which show all images in a collection sorted according to their visual attributes and metadata. This allows us to efficiently "look inside" large visual collections, identifying patterns and seeing the whole "landscape" of the data.
+
+After refining our software on internal projects, in September 2011 we released ImagePlot visualization tool. The download also includes ImageMeasure macro which analyzes basic visual features of images in a collection (brightness, saturation, hue and number of shapes of every image).
+
+Today we are making available a more powerful free digital image processing application:
+
+QTIP: analyze image collections with the speed of the light.
+
+
+QTIP stands for QTImageProcessing. Written in Java, QTIP uses OpenCV and is very fast. Fire it up, select a directory containing images, and watch it go through it with an amazing speed. The output is a single file (.csv) containing image filenames and 49 extracted features per image.
+
+For example: we downloaded 178,930 images from Flickr group "Graphic Design." On our iMac (Fall 2011) with 16 GB of RAM, the application processed all these images in 15 minutes (192 images per second). On Mac Air (Fall 2011, 4 GB RAM), processing the same 178,300 images took 28 minutes (106 images per second.)
+
+Once you process your image collection with QTIP, use the results file with ImagePlot to explore the collection and make discoveries.
+
+
+
+NOTES:
+
+1. If you are processing a directory which contains lots of images, it may take a few seconds before you see QTIP beginning to read images - just wait.
+
+2. QTIP can process multiple image directories located inside a user-specified input directory.
+
+3. One of the most useful features output by QTIP is the number which indicates if a given image is color or black and white. For the description of this and all other features, read program documentation.
+
+4. The results file contains two columns called "titleID" and "bookID." Disregard these columns. (The program was originally written to analyze our one million manga pages data set which was divided into titles and books.)
+
+5. If QTIP encounters a corrupt image, it will still create a row for this image containing filename and an error flag. You need to remove these lines before using these results with ImagePlot. Do a sort on the filename using "bookID" column and then delete the lines which have error flag. In our experience, image sets donwnloaded form social media sites (Flickr, deviantArt) often contain some corrupt images. 

@@ -1,0 +1,4 @@
+
+The Smuggling of Art, and the Art of Smuggling: Unvocering the Illicit Trade in Cultural Property and Antiques
+
+We empirically analyze the illicit trade in cultural property and antiques, taking advantage of different reporting incentives between source and destination countries. We generate a measure of illicit trafficking in these goods by comparing imports recorded in United States' customs data and the (purportedly identical) trade recorded by customs authorities in exporting countries. This reporting gap is highly correlated with corruption levels of exporting countries. This correlation is stronger for artifact-rich countries. As a placebo test, we do not observe any such pattern for US imports of toys. We report similar results for four other western country markets
