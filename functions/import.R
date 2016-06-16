@@ -96,8 +96,9 @@ loadDocuments <- function(data.dir, recursive=T)
   
   paths.v <- file.path(data.dir, m[,1])
   docs <- sapply(paths.v, readFile)
-  docs <- cbind(m[, 1], docs)
-  colnames(docs) <- c("id", "text")
+  docs <- cbind(m, docs)
+  cols.ct <- ncol(docs)
+  colnames(docs) <- c(1:(cols.ct - 2), "id", "text")
   
   docs <- as.data.frame(docs, stringsAsFactors=F)
   return (docs)

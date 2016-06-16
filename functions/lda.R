@@ -1,7 +1,6 @@
 ## This file contains functions related to running LDA using Mallet and working with the 
 ## output.
 
-
 if (!require("mallet"))
   install.packages("mallet")
 
@@ -89,6 +88,36 @@ trainSimpleLDAModel <- function(documents,
   }
 
   return(result)
+}
+
+computeSubSet <- function(lda.model, class.col.ix, class.value)
+{
+  class.ix <- which(lda.model$documents[,class.col.ix] == class.value)
+  class.assignments.m <- lda.model$docAssignments[class.ix,]
+  class.documents <- lda.model$documents[class.ix, ]
+  class.topics.mean <- colMeans(class.assignments.m)
+  names(class.topics.mean) <- 1:lda.model$K
+  class.topics.mean <- class.topics.mean[order(class.topics.mean, decreasing = T)]
+  
+  result <- lda.model
+  result$documents <- class.documents
+  result$docAssignments <- class.assignments.m
+  result$D <- length(class.ix)
+  result$class.col.ix <- class.col.ix
+  result$class.col.value <- class.value
+  result$class.mean <- class.topics.mean
+  
+  result$getOriginal <- function() { return (lda.model) }
+  result$getTopic <- function(k) {
+    return (getTopic(result, k))
+  }
+  
+  result$getDocument <- function(id) {
+    ix <- which(class.documents$id == id)
+    return (class.documents$text[ix])
+  }
+  
+  return (result)
 }
 
 #' Creates
