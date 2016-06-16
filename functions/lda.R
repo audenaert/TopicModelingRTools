@@ -177,6 +177,11 @@ topic.diff.kl <- function(topic.a, topic.b, same.model=F)
   return (kl.div.a + kl.div.b)
 }
 
+#' Compute the similarity matrix of topics within a model using KL divergence 
+#' of the topics term PDF. 
+#' 
+#' @param lda.model The trained topic model.
+#' @return A KxK matrix with 
 topic.similarity.kl <- function(lda.model)
 {
   # HACK: need to use function application instead of loops
@@ -186,6 +191,11 @@ topic.similarity.kl <- function(lda.model)
   { 
     
     topic.a <- lda.model$getTopic(ix.a)
+# TODO requires testing
+#    similarity[ix.a, ix.a+1:K] <- sapply(ix.a+1:K, function(ix.b) {
+#      topic.b <- lda.model$getTopic(ix.b)
+#      return (topic.diff.kl(topic.a, topic.b))
+#    })
     for (ix.b in (ix.a+1):K)
     {
       topic.b <- lda.model$getTopic(ix.b)
@@ -194,7 +204,14 @@ topic.similarity.kl <- function(lda.model)
       similarity[ix.a, ix.b] <- kl.diff[1]
       similarity[ix.b, ix.a] <- kl.diff[1]
     }
+    
+    # set the self similarity for this topic
+    similarity[ix.a, ix.a] <- 0
   }
+  
+  # add column and row names with topic index
+  colnames(similarity) <- 1:K
+  rownames(similarity) <- 1:K
   
   return (similarity)
 }
