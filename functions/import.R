@@ -76,7 +76,7 @@ loadDocuments <- function(data.dir, recursive=T)
 {
   files.v <- dir(path=data.dir, pattern=".*\\.txt", recursive=TRUE)
   m <- sapply(strsplit(files.v, "/"), unlist)
-  if (nrow(m) > 1)
+  if (is.matrix(m))
     m <- t(m)
   m <- cbind(files.v, m)
   
