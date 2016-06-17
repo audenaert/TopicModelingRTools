@@ -90,8 +90,20 @@ trainSimpleLDAModel <- function(documents,
   return(result)
 }
 
+
+#' Create a model that represents a subset of the documents within a corpus.
+#'
+#' @param lda.model 
+#' @param class.col.ix 
+#' @param class.value 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 computeSubSet <- function(lda.model, class.col.ix, class.value)
 {
+  
   class.ix <- which(lda.model$documents[,class.col.ix] == class.value)
   class.assignments.m <- lda.model$docAssignments[class.ix,]
   class.documents <- lda.model$documents[class.ix, ]
